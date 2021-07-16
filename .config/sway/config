@@ -3,7 +3,8 @@ set $mod Mod1
 set $term alacritty
 
 # Visual
-gaps inner 8
+gaps inner 2
+gaps outer 4
 
 font pango: Iosevka 9
 
@@ -21,33 +22,31 @@ client.unfocused        $cl_back $cl_back $cl_fore $cl_back $cl_back
 client.urgent           $cl_urge $cl_urge $cl_fore $cl_urge $cl_urge
 
 # Display
-output DP-1 resolution 1920x1080@144.001Hz
-output HDMI-A-1 resolution 1920x1080
+output HDMI-A-1 resolution 1920x1080@240.00Hz
 
-focus output DP-1
+focus output HDMI-A-1
 
 output * background '~/.images/wallpaper.jpg' fill
 
-workspace 1 output DP-1
-workspace 2 output HDMI-A-1
-workspace 3 output DP-1
-
 workspace 1
-exec firefox
+exec google-chrome-stable
+
+workspace 2
+exec code
 
 workspace 3
-exec telegram-desktop
 exec discord
 
 exec 'sleep 3; swaymsg workspace 1'
 
 # Input
 input type:keyboard {
-    xkb_layout pl
+    xkb_layout us
 }
 
 # Bindings
-bindsym Print+Ctrl+Shift exec grim -g "$(slurp -d)" - | wl-copy
+bindsym Print+Shift exec grim -g "$(slurp -d)" - | wl-copy
+bindsym Print exec slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
 
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
