@@ -1,0 +1,8 @@
+max-visible=1
+font=Iosevka 12
+text-color=#62d196
+background-color=#231f20
+border-color=#962a54
+border-size=2
+border-radius=5
+default-timeout=5000

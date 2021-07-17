@@ -1,0 +1,7 @@
+#
+# STATUSBAR
+#
+
+bar {
+    swaybar_command waybar
+}

@@ -1,0 +1,10 @@
+#
+# OUTPUT
+#
+
+# My one and only monitor
+output DP-1 resolution 1920x1080@240.00Hz
+focus output DP-1
+
+# Wallpaper
+output * background '~/.images/wallpaper.jpg' fill
