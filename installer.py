@@ -111,7 +111,7 @@ if __name__ == "__main__":
         rice("alacritty", SRC_CONFIG_DIR, DST_CONFIG_DIR)
         rice("sway", SRC_CONFIG_DIR, DST_CONFIG_DIR)
         rice("waybar", SRC_CONFIG_DIR, DST_CONFIG_DIR)
-        rice("wofi", SRC_CONFIG_DIR, DST_CONFIG_DIR)
+        rice("mako", SRC_CONFIG_DIR, DST_CONFIG_DIR)
         rice(".images", SCRIPT_DIR, HOME_DIR)
 
     if not args.nodeps:
@@ -120,7 +120,8 @@ if __name__ == "__main__":
 
         color_print(colorama.Fore.GREEN, "#2. wayland stuff")
         pkgman(
-            pac, "sway waybar wofi wl-clipboard slurp grim xorg-xwayland".split())
+            pac, "sway waybar wl-clipboard slurp grim xorg-xwayland".split())
+        pkgman(aur, ["sway-launcher-desktop"])
 
         color_print(colorama.Fore.GREEN, "#3. audio stuff")
         pkgman(pac, "bluez bluez-utils alsa-utils pipewire pipewire-alsa pipewire-pulse blueberry".split())
@@ -129,7 +130,7 @@ if __name__ == "__main__":
         pkgman(pac, "networkmanager bluez bluez-utils blueberry".split())
 
         color_print(colorama.Fore.GREEN, "#5. desktop apps")
-        pkgman(pac, ["discord", "alacritty"])
+        pkgman(pac, ["discord", "alacritty", "mako"])
         pkgman(aur, ["google-chrome",
                      "visual-studio-code-bin"])
 
