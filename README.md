@@ -1,5 +1,6 @@
 # Dotfiles for Sway.
 
+![Preview-Launcher](preview-2.png)
 ![Preview](preview.png)
 
 I heavily recommend (if you actually want to use my configs) to fork this repository and change stuff according to your needs. 
@@ -54,7 +55,8 @@ $ installer.py --uninstall
 
 - Sensible Sway configuration defaults with quality-of-life tweaks.
 - Custom Waybar styling and configuration.
-- Custom Wofi styling and configuration.
+- Uses [sway-launcher-desktop](https://github.com/Biont/sway-launcher-desktop) from AUR powered by the amazing🔥 fuzzy search tool [fzf](https://github.com/junegunn/fzf)
 - Alacritty styling and configuration.
 - Matching wallpaper :)
-- Google chrome, VSCode, Discord installed and configured for different workspaces.
+- Notifications styled with [Mako](https://github.com/emersion/mako)
+- Google chrome, VSCode, Discord, Alacritty.
