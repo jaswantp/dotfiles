@@ -2,8 +2,14 @@
 # BASIC
 #
 
-# Logo key on Keychron K2 in win/android mode.
-set $mod Mod1
+# Logo key on Keychron K2 in MacOs mode. 
+# Make sure /etc/modprobe.d/hid_apple.conf has this line
+# options hid_apple fnmode=2 swap_opt_cmd=1
+# 1. Flag key
+set $mod Mod4
+# 2. Alt/Command key
+set $alt Mod1
+# printscr will be $alt + Shift + 4 on macOs keyboards
 
 # Set default terminal
 set $term alacritty
@@ -30,8 +36,7 @@ set $menu exec $term --class=launcher -e sway-launcher-desktop
 bindsym $mod+d exec $menu
 
 # Screenshot capabilities
-bindsym Print+Shift exec grim -g "$(slurp -d)" - | wl-copy
-bindsym Print exec slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
+bindsym $alt+Shift+4 exec slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
 
 #
 # WORKSPACES:
