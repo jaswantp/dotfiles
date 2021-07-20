@@ -1,5 +1,8 @@
 # Start notification daemon
 exec mako --config ~/.config/mako/config
 
+# Set env vars
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 # Include configs
 include ~/.config/sway/config.d/*
